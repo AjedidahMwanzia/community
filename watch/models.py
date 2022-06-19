@@ -6,12 +6,12 @@ from django.dispatch import receiver
 from cloudinary.models import CloudinaryField
 
 # Create your models here.
-class Neighborhood(models.Model):
+class NeighborHood(models.Model):
     view =  CloudinaryField("image")
     name = models.CharField(max_length=50,blank=True)
     location = models.CharField(max_length = 50,null = True)
     pub_date = models.DateTimeField(auto_now_add=True, null=True)
-    occupants = models.ForeignKey(User, null = True,related_name='business')
+    occupants = models.ForeignKey(User, null = True,related_name='business',on_delete=models.CASCADE)
     
     def save_hood(self):
         self.save()
@@ -24,9 +24,9 @@ class Neighborhood(models.Model):
 class Business(models.Model):
     name = models.CharField(max_length=50,blank=True)
     image =  CloudinaryField("image")
-    user = models.ForeignKey(User, null = True,related_name='user')
+    user = models.ForeignKey(User, null = True,related_name='user',on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True, null=True)
-    neighborHood = models.ForeignKey(NeighborHood, null = True,related_name='business')
+    neighborHood = models.ForeignKey(NeighborHood, null = True,related_name='business',on_delete=models.CASCADE)
 
     class Meta:
         ordering = ['-pk']
@@ -53,9 +53,9 @@ class Profile(models.Model):
     Profile_photo = CloudinaryField("image")
     Bio = models.TextField(max_length = 50,null = True)
     user = models.OneToOneField(User,on_delete=models.CASCADE, primary_key=True)
-    neighborhood = models.ForeignKey('Neighborhood', related_name='neighbourhood',null=True)
+    neighborhood = models.ForeignKey('Neighborhood', related_name='neighbourhood',null=True,on_delete=models.CASCADE)
     email_address = models.CharField(max_length = 50,null = True)
-    business = models.ForeignKey('Business',related_name='business',null=True)
+    business = models.ForeignKey('Business',related_name='business',null=True,on_delete=models.CASCADE)
 
     def save_profile(self):
         self.save()
@@ -89,9 +89,9 @@ class Post(models.Model):
     name = models.CharField(max_length=50,blank=True)
     image = CloudinaryField("image")
     description = models.TextField(max_length = 50,null = True)
-    user = models.ForeignKey(User, null = True,related_name='post')
+    user = models.ForeignKey(User, null = True,related_name='post',on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True, null=True)
-    neighborHood = models.ForeignKey(NeighborHood, null = True,related_name='posts')
+    neighborHood = models.ForeignKey(NeighborHood, null = True,related_name='posts',on_delete=models.CASCADE)
     
     def save_post(self):
         self.save()
@@ -106,8 +106,8 @@ class Post(models.Model):
 
 class Comment(models.Model):
     name = models.CharField(max_length=30)
-    post = models.ForeignKey(Post,null = True)
-    neighborhood = models.ForeignKey(NeighborHood,related_name='comment')
+    post = models.ForeignKey(Post,null = True,on_delete=models.CASCADE)
+    neighborhood = models.ForeignKey(NeighborHood,related_name='comment',on_delete=models.CASCADE)
 
 
     def __str__(self):

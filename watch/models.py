@@ -28,6 +28,9 @@ class NeighborHood(models.Model):
     def save_hood(self):
         self.save()
 
+    def __str__(self):
+        return self.name
+
     @classmethod
     def get_all_hoods(cls):
         hood = NeighborHood.objects.all()
@@ -45,6 +48,9 @@ class Business(models.Model):
 
     def save_business(self):
         self.save()
+
+    def __str__(self):
+        return self.name
 
     @classmethod
     def get_business(cls, profile):
@@ -101,7 +107,8 @@ class Post(models.Model):
 
     def delete_post(self):
         self.delete()
-
+    def __str__(self):
+        return self.name
     @classmethod
     def get_hood_posts(cls,id):
         posts = Post.objects.filter(id = id)
@@ -112,7 +119,8 @@ class Comment(models.Model):
     post = models.ForeignKey(Post,null = True,on_delete=models.CASCADE)
     neighborhood = models.ForeignKey(NeighborHood,related_name='comment',on_delete=models.CASCADE)
 
-
+    def __str__(self):
+        return self.name
     def __str__(self):
         return self.name
 

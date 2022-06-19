@@ -12,6 +12,9 @@ cloudinary = "*"
 django-bootstrap4 = "*"
 django-registration = "*"
 django-registration-redux = "*"
+django-heroku = "*"
+python-decouple = "*"
+gunicorn = "*"
 
 [dev-packages]
 

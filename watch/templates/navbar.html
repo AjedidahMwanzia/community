@@ -9,17 +9,11 @@
     <div class="container-fluid" id="nav">
         <div class="topnav" id="nav">
             <div class="row">
-                <div class="col-md-2">
-                    <div id="main">
-                        <a href="{% url 'home_page' %}">
-                            Community
-                        </a>
-                    </div>
-                </div>
+            
                 <div class="col-md-4" id="logo">
-                    <a href="{% url 'home_page' %}" style="color:white;"><strong>Community</strong></a>
+                    <a href="{% url 'home_page' %}" style="color:white;padding-top: 1.2vw;"><strong>Community</strong></a>
                 </div>
-                <div class="col-md-2" height="5px;" width="10px;">
+                <div class="col-md-2" height="0.3vw;" style="padding-top: 0.7vw;"  width="10px;">
                     <form class="navbar-form" role="search" action="">
                         <input type="text" name="search" placeholder="Search.." id="input">
                     </form>
@@ -36,9 +30,9 @@
                             <ul class="dropdown-menu" role="menu" style="position: absolute;left: 0px;
                             top: 0px;
                             z-index: 1;">
-                                <li>
+                                
                                     <a href="{% url 'home_page' %}">Home</a>
-                                </li>
+                                
                                 <li>
                                     <a href="{% url 'edit_profile' %}">Edit Profile</a>
                                 </li>
@@ -64,9 +58,13 @@
                     <h1 class="profile-user-name" style="font-size: 14px;">{{profile.username}}</h1>
                     {% endif %}
                 </div>
-                <div class="col-md-2" style="text-align: center; padding-top: 16px; font-size: 13px; color:white;background-color:rgba(0,0,0,0.9); opacity: 0.9;">
-                    <a href="{% url 'add_hood' %}" style="color: white;">ADD NEW HOOD!</a>
+                <div class="col-md-2" style="text-align: center; padding-top: 1vw; font-size: 1vw; color:black; display: flex;justify-content: space-around;">
+                    <a href="{% url 'add_hood' %}" style="color: white;">Add hood</a>
+                    <a style="color:white;" href="{% url 'hood' neighborhood_id=request.user.profile.neighborhood.id %}" >Your hood</a>
                 </div>
+                <div class="col-md-8">
+                    
+                 </div>
             </div>
         </div>
     </div>

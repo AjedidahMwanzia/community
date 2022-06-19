@@ -14,6 +14,15 @@ body{
   width: 30%;
   padding-top: 1vw;
 }
+#nav{
+    background-color: 
+     #0b1016;
+    padding: 0.5vw;
+    padding-left: 3vw;
+}
+.dropdown-menu a{
+    color: #0b1016;
+}
  /* #hoody{
     height: 32vw;
     width: 25%; 

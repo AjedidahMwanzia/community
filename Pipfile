@@ -9,6 +9,8 @@ django = "*"
 psycopg2 = "*"
 pillow = "*"
 cloudinary = "*"
+django-bootstrap4 = "*"
+django-registration = "*"
 
 [dev-packages]
 

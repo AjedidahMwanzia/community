@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'watch',
     'cloudinary',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [

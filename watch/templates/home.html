@@ -12,12 +12,12 @@
 <div class="col-md-2"></div>
 </div>
 {% endif %}
-    <div class="row">
+    <div id="hood"  class="row">
 
-        <div class="col-md-2"></div>
+        
         {% for hood in hoods%}
         <div class="card col-md-4" id="hoody">
-            <img class="card-img-top img-responsive" src="{{hood.view.url}}" alt="Card image cap" height="200px;" width="300px;" />
+            <img class="card-img-top img-responsive"  src="{{hood.view.url}}" alt="Card image cap" />
             <div class="card-body">
 
                 <p><strong>{{hood.name}}</strong> {{hood.location}}</p>
@@ -28,7 +28,7 @@
             </div>
         </div>
         {% endfor %}
-        <div class="col-md-2"></div>
+        <!-- <div class="col-md-2"></div> -->
 
     </div>
     {% endblock %}

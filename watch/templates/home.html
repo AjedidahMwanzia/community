@@ -2,13 +2,17 @@
 {% load bootstrap4 %}
 {% block content %}
 {{ block.super }}
+<div class="head">
+    <h5>Are you new in a neighborhood? <br>Looking to know where to get various services? <br>Looking to stay update on happengs in your neighborhood</h5>
+    <div class="but">
+       
+       
+    </div>
+   
+</div>
 <div class="container-fluid" id="pro">
 {% if request.user.profile.neighborhood %}
-<div class="row">
-<div class="col-md-2"></div>
 
-<div class="col-md-2"></div>
-</div>
 {% endif %}
     <div id="hood"  class="row">
 

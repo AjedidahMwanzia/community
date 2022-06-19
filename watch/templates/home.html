@@ -12,7 +12,13 @@
 </div>
 <div class="container-fluid" id="pro">
 {% if request.user.profile.neighborhood %}
-
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+    <a style="color:white;" href="{% url 'hood' neighborhood_id=request.user.profile.neighborhood.id %}" class="btn btn-outline-dark">View Current Neighborhood</a>
+    </div>
+    <div class="col-md-2"></div>
+    </div>
 {% endif %}
     <div id="hood"  class="row">
 

@@ -39,7 +39,7 @@ def edit(request):
         form = ProfileForm()
     return render(request, 'profile/edit_profile.html', locals())
 
-@login_required(login_url='/accounts/login')
+# @login_required(login_url='/accounts/login')
 def upload_business(request):
     hood = NeighborHood.objects.get(id=request.user.profile.neighborhood.id)
     if request.method == 'POST':
@@ -54,7 +54,7 @@ def upload_business(request):
         businessform = BusinessForm()
     return render(request,'Business.html',locals())
 
-@login_required(login_url='/accounts/login')
+# @login_required(login_url='/accounts/login')
 def add_hood(request):
     if request.method == 'POST':
         hoodform = HoodForm(request.POST, request.FILES)
@@ -68,7 +68,7 @@ def add_hood(request):
     return render(request,'add-hood.html',locals())
     
 
-@login_required(login_url='/accounts/login')
+# @login_required(login_url='/accounts/login')
 def join(request,neighborhood_id):
     hood = NeighborHood.objects.get(id=neighborhood_id)
     current_user = request.user
@@ -83,7 +83,7 @@ def leave(request,neighborhood_id):
     current_user.profile.save()
     return redirect('home_page')
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def hood(request,neighborhood_id):
     current_user = request.user
     hood_name = current_user.profile.neighborhood
@@ -107,7 +107,7 @@ def one_post(request,post_id):
         return render(request, 'commentspace.html', locals())
     return redirect('hood')
 
-@login_required(login_url='/accounts/login')
+# @login_required(login_url='/accounts/login')
 def add_post(request):
     hood = NeighborHood.objects.get(id=request.user.profile.neighborhood.id)
     if request.method == 'POST':
@@ -123,7 +123,7 @@ def add_post(request):
         postform = PostForm()
     return render(request,'add-post.html',locals())
 
-@login_required(login_url='/accounts/login')
+# @login_required(login_url='/accounts/login')
 def search_results(request):
     business= Business.objects.all()
     hood = NeighborHood.objects.get(id=request.user.profile.neighborhood.id)

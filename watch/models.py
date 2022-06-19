@@ -6,6 +6,18 @@ from django.dispatch import receiver
 from cloudinary.models import CloudinaryField
 
 # Create your models here.
+
+# @receiver(post_save, sender=User)
+# def create_user_profile(sender, instance, created, **kwargs):
+#     if created:
+#         Profile.objects.create(user=instance)
+
+
+# @receiver(post_save, sender=User)
+# def save_user_profile(sender, instance, **kwargs):
+#     instance.profile.save()
+
+
 class NeighborHood(models.Model):
     view =  CloudinaryField("image")
     name = models.CharField(max_length=50,blank=True)
@@ -75,15 +87,6 @@ class Profile(models.Model):
         userprof = Profile.objects.filter(user__username__icontains = name)
         return userprof
 
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
-
-
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
 
 class Post(models.Model):
     name = models.CharField(max_length=50,blank=True)

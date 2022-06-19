@@ -11,6 +11,7 @@ pillow = "*"
 cloudinary = "*"
 django-bootstrap4 = "*"
 django-registration = "*"
+django-registration-redux = "*"
 
 [dev-packages]
 

@@ -9,18 +9,12 @@ from .forms import BusinessForm,ProfileForm,HoodForm,PostForm,CommentForm
 # Create your views here.
 
 def convert_dates(dates):
-    # function that gets the weekday number for the date.
     day_number = dt.date.weekday(dates)
 
     days = ['Monday','Tuesday','Wednesday','thursday','Friday','Saturday','Sunday']
-    '''
-    Returns the actual day of the week
-    '''
     day = days[day_number]
     return day
-    '''
-    return render for home page
-    '''
+
 def home_page(request):
     date = dt.date.today()
     hoods = NeighborHood.objects.all()
@@ -29,10 +23,7 @@ def home_page(request):
 def logout(request):
     return render(request, 'home.html')
 
-'''
-    editing user profile fillform & submission
- 
-    '''
+
 @login_required(login_url='/accounts/login/')
 def edit(request):
     profile = User.objects.get(username=request.user)

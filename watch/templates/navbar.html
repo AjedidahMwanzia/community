@@ -62,9 +62,15 @@
                     <a  style="color:white;"href="{% url 'add_hood' %}" >Add Hood</a>
 
                 </div>
-                <div class="col-md-8">
-                    
-                 </div>
+                {% if request.user.profile.neighborhood %}
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                    <a style="color:white;" href="{% url 'hood' neighborhood_id=request.user.profile.neighborhood.id %}" >Current Neighborhood</a>
+                    </div>
+                    <div class="col-md-2"></div>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>

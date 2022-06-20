@@ -3,23 +3,18 @@
 {% block content %}
 {{ block.super }}
 <div class="head">
-    <h5>Are you new in a neighborhood? <br>Looking to know where to get various services? <br>Looking to stay update on happengs in your neighborhood</h5>
+    <h5>Are you new in a neighborhood? <br>Looking to know where to get various services? </h5>
     <div class="but">
-       
+        <div class="col-md-2" style="text-align: center; padding-top: 1vw; font-size: 1vw; color:black; display: flex;justify-content: space-around;">
+            <a  style="color:white;"href="{% url 'add_hood' %}" >Add Hood</a>
+
+        </div>  
        
     </div>
    
 </div>
 <div class="container-fluid" id="pro">
-{% if request.user.profile.neighborhood %}
-<div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-    <a style="color:white;" href="{% url 'hood' neighborhood_id=request.user.profile.neighborhood.id %}" class="btn btn-outline-dark">View Current Neighborhood</a>
-    </div>
-    <div class="col-md-2"></div>
-    </div>
-{% endif %}
+
     <div id="hood"  class="row">
 
         

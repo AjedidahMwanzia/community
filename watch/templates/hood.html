@@ -7,25 +7,30 @@
     <br>
     <h6 style="text-align: center">{{single_hood.occupants.count}}</h6>
     <br>
-    <a href="{% url 'leave' neighborhood_id=single_hood.id %}" class="btn btn-outline-danger">Leave Neighborhood</a>
-    <a href="{% url 'add_post' %}" class="btn btn-outline-primary">Add Post</a>
-    <a href="{% url 'upload_business' %}" class="btn btn-outline-primary">Include Business</a>
-
+    <div class="link">
+        <a href="{% url 'leave' neighborhood_id=single_hood.id %}" class="btn btn-outline-primary">Leave Neighborhood</a>
+        <a href="{% url 'add_post' %}" class="btn btn-outline-primary">Add Post</a>
+        <a href="{% url 'upload_business' %}" class="btn btn-outline-primary">Include Business</a>
+    
+    </div>
+   
 
     <h5>Businesses</h5>
-    <div class="row">
+    <div class="row" id="biz1">
         {% for biz in single_hood.business.all %}
         <div class="card"  id="biz">
             <img class="card-img-top img-responsive" src="{{biz.image.url}}" alt="Card image">
             <div class="card-body">
                 <h4 class="card-title">{{biz.name}}</h4>
+                <h6>Posted by :{{biz.user}}</h6>
+         
             </div>
         </div>
         {% endfor %}
     </div>
 
     <h5>Updates</h5>
-    <div class="row">
+    <div class="row"  id="update" >
         {% for conv in single_hood.posts.all %}
         <div class="card" style="width:400px" id="pst">
             <img class="card-img-top" src="{{conv.image.url}}" alt="Card image">

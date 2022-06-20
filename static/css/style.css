@@ -62,7 +62,24 @@ body{
     height: 20vw;
 }
 
+#update .card{
+    height: 40vw;
+    margin-left: 3vw;
+    padding: 1vw;
 
+}
+#biz1 .card{
+    height: 30vw;
+    margin-left: 3vw;
+    padding: 1vw;
+    margin-bottom: 5vw;
+
+}
 .card-body input title{
     display: none;
+}
+.link a{
+  justify-content: space-around;
+  text-align: center;
+  margin-left: 15vw;
 }

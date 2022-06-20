@@ -11,7 +11,7 @@ join a hood, one can see businesses and posts in only that hood they belong to.
 ## Screenshots 
 ###### Home page
  
-<img src="https://github.com/AjedidahMwanzia/community/blob/master/static/images/community.png">
+<img src="https://github.com/AjedidahMwanzia/community/blob/master/static/images/two.png">
 
  
 ## User Story  

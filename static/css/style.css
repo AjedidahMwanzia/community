@@ -16,10 +16,11 @@ body{
   background-color: white;
 }
 #nav{
-    background-color: 
-    #e1a872;
+    background-color:   
+#0e173d;
     padding: 0.5vw;
     padding-left: 3vw;
+    color:black;
 }
 .dropdown-menu a{
     color: #0b1016;
@@ -28,22 +29,7 @@ body{
 .navbar-form input{
     width: 10vw;
 }
-.head{
-    background-image: url(https://res.cloudinary.com/jeddy/image/upload/v1655656922/zac-gudakov-FH3zlDsY4Z4-unsplash_qpe9tu.jpg);
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 50vw;
-    padding-top: 14vw;
-    padding-left: 10vw;
-   
-    color: white;
-    font-weight: bold;
-    
-}
-.head h5{
-    font-size: 2vw;
-}
+
 .but a{
     background-color: #d1911d;
     width: 10vw;

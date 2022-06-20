@@ -5,14 +5,14 @@
 
 <head>
   <meta charset="utf-8">
-
+ 
 
   {% block styles %}
   {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
-  <title>Bootstrap Example</title>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,8 +22,8 @@
 
 </head>
 
-<body>
-  {% include "navbar.html" %}
+<body id="forms">
+  
   {% block content %}
   
   {%endblock%}

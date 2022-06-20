@@ -61,4 +61,8 @@ body{
 .card img{
     height: 20vw;
 }
- 
+
+
+.card-body input title{
+    display: none;
+}

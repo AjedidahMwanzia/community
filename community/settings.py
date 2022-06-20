@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-(r_(91#&lspl6d%w&1ur)6mexo_*=p60+793r*)$0sapwylnb_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
 MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
@@ -110,14 +110,7 @@ WSGI_APPLICATION = 'community.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'community',
-        'USER': 'moringa',
-        'PASSWORD':'jay'
-    }
-}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
